@@ -1,0 +1,10 @@
+description: 'Pull data from google sheet to generat visualized data chart'
+name: 'Generate Chart from google sheet'
+author: 'Ray Huang <general@rayhuang.dev>'
+branding:
+  icon: 'edit-3'
+  color: 'blue'
+inputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
