@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Create a json string of the data
-credential = os.getenv('INPUT_CHECKIN_CHART_TOKEN')
+credential = os.getenv('INPUT_GOOGLE_SHEET_CRED')
 
 json_filename="credential.json"
 with open(json_filename, "w") as json_file:    
