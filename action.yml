@@ -8,6 +8,9 @@ inputs:
   IMG_DIR:
     description: 'the dir where the markdown will save in, Default: content/posts'
     required: false
+  GOOGLE_SHEET_CRED:
+    description: 'the json string for google api credential'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
