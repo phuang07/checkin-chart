@@ -11,6 +11,11 @@ inputs:
   GOOGLE_SHEET_CRED:
     description: 'the json string for google api credential'
     required: true
+  CHECKIN_CHART_TOKEN:
+    description: 'github token to allow push code.'
+    required: true
+
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
