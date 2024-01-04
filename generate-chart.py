@@ -6,17 +6,22 @@ import os
 from matplotlib import rcParams
 
 import numpy as np
-
+import json
 import gspread
 import seaborn as sns
 
-# Configure Matplotlib to use a Chinese font
-# rcParams['font.family'] = 'sans-serif'
-# rcParams['font.sans-serif'] = ['SimHei']  # Use 'SimHei' or your installed Chinese font
 from dotenv import load_dotenv
 load_dotenv()
 
-gc = gspread.service_account()
+# Create a json string of the data
+credential = os.getenv('GOOGLE_SHEET_CRED')
+
+json_filename="credential.json"
+with open(json_filename, "w") as json_file:    
+    json_file.write(credential)
+
+
+gc = gspread.service_account(filename='credential.json')
 img_dir = os.getenv('IMG_DIR')
 
 url = 'https://docs.google.com/spreadsheets/d/1v85-Fp_YWwoHOT7dtLw8HeHOaL3bxS5yGSOob-2fifQ/edit?usp=sharing'
@@ -90,3 +95,8 @@ chart_daily_toal(df)
 
 
 
+try:
+    os.remove(json_filename)
+    print(f"File '{json_filename}' deleted successfully.")
+except OSError as e:
+    print(f"Error deleting the file: {e}")
