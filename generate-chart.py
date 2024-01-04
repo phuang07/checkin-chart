@@ -1,6 +1,8 @@
 from collections import Counter
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
 from matplotlib import rcParams
 
 import numpy as np
@@ -11,10 +13,11 @@ import seaborn as sns
 # Configure Matplotlib to use a Chinese font
 # rcParams['font.family'] = 'sans-serif'
 # rcParams['font.sans-serif'] = ['SimHei']  # Use 'SimHei' or your installed Chinese font
-
+from dotenv import load_dotenv
+load_dotenv()
 
 gc = gspread.service_account()
-
+img_dir = os.getenv('IMG_DIR')
 
 url = 'https://docs.google.com/spreadsheets/d/1v85-Fp_YWwoHOT7dtLw8HeHOaL3bxS5yGSOob-2fifQ/edit?usp=sharing'
 spreadsheet = gc.open_by_url(url)

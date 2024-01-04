@@ -3,3 +3,4 @@ pandas
 numpy
 gspread
 seaborn
+python-dotenv

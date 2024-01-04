@@ -5,6 +5,9 @@ branding:
   icon: 'edit-3'
   color: 'blue'
 inputs:
+  IMG_DIR:
+    description: 'the dir where the markdown will save in, Default: content/posts'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
